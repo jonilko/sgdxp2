@@ -1,0 +1,4 @@
+rootProject.name = 'sgdxp2'
+
+include 'service-guard'
+include 'service-guard-example'

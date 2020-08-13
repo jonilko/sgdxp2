@@ -1,0 +1,8 @@
+Bundle-Name: Xtivia Service Guard DXP 2 REST Example
+Bundle-SymbolicName: com.xtivia.sgdxp2.example.rest
+Bundle-Version: 2.0.0
+Liferay-Configuration-Path: /configuration
+Require-Capability:\
+	osgi.contract;\
+		filter:="(&(osgi.contract=JavaJAXRS)(version=2))"
+-sources: true
