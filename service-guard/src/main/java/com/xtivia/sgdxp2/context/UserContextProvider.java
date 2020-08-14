@@ -31,7 +31,7 @@ import com.liferay.portal.kernel.util.PortalUtil;
 @Component(
 	property = {
 		"osgi.jaxrs.extension=true",
-		"osgi.jaxrs.name=SgDxp2.ContextProvider.UserContextProvider",
+		"osgi.jaxrs.name=Xtivia.SgDxp2.ContextProvider.UserContextProvider",
 		"osgi.jaxrs.application.select=(type=sgdxp2)"
 	},
 	scope = ServiceScope.PROTOTYPE)

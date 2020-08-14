@@ -31,7 +31,7 @@ import com.xtivia.sgdxp2.exception.SgDxpRestException;
 @Component(
 	property = {
 		"osgi.jaxrs.extension=true",
-		"osgi.jaxrs.name=SgDxp2.Filter.ResourceAuthorized",
+		"osgi.jaxrs.name=Xtivia.SgDxp2.Filter.ResourceAuthorized",
 		"osgi.jaxrs.application.select=(type=sgdxp2)"
 	},
 	scope = ServiceScope.PROTOTYPE)
