@@ -1,37 +1,28 @@
-## Welcome to GitHub Pages
+# Xtivia Service Guard 2.0
 
-You can use the [editor on GitHub](https://github.com/jonilko/sgdxp2/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+[OSGI](https://www.osgi.org/) - all about regesting components
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+[Benefits](https://www.osgi.org/developer/benefits-of-using-osgi/)
 
-### Markdown
+[Whiteboard pattern](https://docs.osgi.org/whitepaper/whiteboard-pattern/)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+[JAX-RS 2.0](https://jcp.org/en/jsr/detail?id=339)
+
+[JAX-RS Whiteboard Specification](https://docs.osgi.org/specification/osgi.cmpn/7.0.0/service.jaxrs.html)
+	
+- Dynamic registertion of applications, filters, interceptors, contexts, listeners
+
+**Service Guard 2** is a collection of filters and context providers that dynamically get attached to an application.
+Register an application with property type=sgdxp2 and all the registered Service Guard components will get attached to that application
+
+`com.xtivia.sgdxp2.samples.SgDxpSampleRestService-default.config`
 
 ```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+type=sgdxp2
+osgi.jaxrs.application.base=/sgdxp2
+osgi.jaxrs.name=Xtivia.Service.Guard.DXP.2.Sample
+auth.verifier.guest.allowed=true
+oauth2.scopechecker.type=none
+liferay.access.control.disable=true
+auth.verifier.auth.verifier.PortalSessionAuthVerifier.check.csrf.token=false
 ```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/jonilko/sgdxp2/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.

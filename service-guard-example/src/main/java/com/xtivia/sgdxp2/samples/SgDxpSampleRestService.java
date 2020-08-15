@@ -51,6 +51,10 @@ public class SgDxpSampleRestService extends Application implements SgDxpAuthoriz
 	 */
 	@Override
 	public boolean authorize(SgDxpContext context) {
+		if (_log.isInfoEnabled()) {
+			_log.info("authorize");
+		}
+
 		final Calendar now = Calendar.getInstance();
 
 		if (now.get(Calendar.MINUTE) % 2 == 0) {
