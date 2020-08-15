@@ -8,7 +8,7 @@
 [JAX-RS Whiteboard Specification](https://docs.osgi.org/specification/osgi.cmpn/7.0.0/service.jaxrs.html) - All about usig OSGI for dynamic registration of JAX-RS applications, filters, interceptors, contexts, listeners
 
 **Service Guard 2** is a collection of filters and context providers that dynamically get attached to a JAX-RS application.
-Register an application with property `type=sgdxp2` and all the Service Guard 2 components will get attached to that application.
+Register an application with property `type=sgdxp2` and all the Service Guard 2 components will get attached to that application. Then you can utilize the Service Guard 2 annotations on your resource methodes/classes.
 
 `com.xtivia.sgdxp2.samples.SgDxpSampleRestService-default.config`
 
