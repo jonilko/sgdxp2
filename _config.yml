@@ -2,16 +2,3 @@ theme: jekyll-theme-minimal
 title: Xtivia Service Guard 2
 email: jilko@xtivia.com
 description: Xtivia's Service Guard for Liferay 7.2 and JAX-RS Whiteboard
-author: Jon Ilko
-navbar-links:
-  About Me: "aboutme"
-  Resources:
-    - Beautiful Jekyll: "https://beautifuljekyll.com"
-    - Learn markdown: "https://www.markdowntutorial.com/"
-  Author's home: "https://jonilko.com"
-avatar: "/assets/img/avatar-icon.png"
-round-avatar: true
-# If you want to have an image logo in the top-left corner instead of the title text,
-# then specify the following parameter
-#title-img: /path/to/image
-# --- Footer options --- #
