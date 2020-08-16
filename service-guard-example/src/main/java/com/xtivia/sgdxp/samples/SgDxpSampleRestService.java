@@ -33,15 +33,16 @@ import org.osgi.service.jaxrs.whiteboard.JaxrsWhiteboardConstants;
  * @author Xtivia
  */
 @Component(
-		property = {
-			JaxrsWhiteboardConstants.JAX_RS_APPLICATION_BASE + "=/sgdxp_samples",
-			JaxrsWhiteboardConstants.JAX_RS_NAME + "=Xtivia.SgDxp2.Sample",
-			"auth.verifier.guest.allowed=true",
-			"oauth2.scopechecker.type=none",
-			"liferay.access.control.disable=true",
-			"auth.verifier.auth.verifier.PortalSessionAuthVerifier.check.csrf.token=false"
-		},
-		service = Application.class)
+	property = {
+		JaxrsWhiteboardConstants.JAX_RS_APPLICATION_BASE + "=/sgdxp_samples",
+		JaxrsWhiteboardConstants.JAX_RS_NAME + "=Xtivia.SgDxp2.Sample",
+		"auth.verifier.guest.allowed=true",
+		"oauth2.scopechecker.type=none",
+		"liferay.access.control.disable=true",
+		"osgi.jaxrs.extension.select=(osgi.jaxrs.name=jaxb-json)",
+		"auth.verifier.auth.verifier.PortalSessionAuthVerifier.check.csrf.token=false"
+	},
+	service = Application.class)
 public class SgDxpSampleRestService extends Application implements SgDxp2Authorizer {
 
 	private static final Log _log = LogFactoryUtil.getLog(SgDxpSampleRestService.class);
