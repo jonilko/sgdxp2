@@ -26,8 +26,8 @@ import org.osgi.service.component.annotations.ServiceScope;
 
 import com.liferay.portal.kernel.model.User;
 import com.xtivia.sgdxp2.annotation.Authorized;
-import com.xtivia.sgdxp2.core.SgDxpContext;
-import com.xtivia.sgdxp2.core.SgDxpResourceContext;
+import com.xtivia.sgdxp2.core.SgDxp2Context;
+import com.xtivia.sgdxp2.core.SgDxp2ResourceContext;
 import com.xtivia.sgdxp2.exception.SgDxpRestException;
 
 @Component(
@@ -48,10 +48,10 @@ public class AuthorizedFilter extends AbstractSecurityFilter implements Containe
 			final User user = getUser();
 			if (user != null) {
 				try {
-					final SgDxpContext ctx = new SgDxpResourceContext(httpRequest, uriInfo.getPathParameters(),
+					final SgDxp2Context ctx = new SgDxp2ResourceContext(httpRequest, uriInfo.getPathParameters(),
 							resourceInfo);
 
-					final Method method = app.getClass().getMethod("authorize", SgDxpContext.class);
+					final Method method = app.getClass().getMethod("authorize", SgDxp2Context.class);
 					isAuthorized = (boolean) method.invoke(app, ctx);
 				} catch (final NoSuchMethodException | SecurityException | IllegalAccessException
 						| IllegalArgumentException | InvocationTargetException e) {

@@ -20,9 +20,9 @@ import java.util.HashMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class SgDxpBaseContext extends HashMap<Object, Object> implements SgDxpContext {
+public class SgDxp2BaseContext extends HashMap<Object, Object> implements SgDxp2Context {
 
-	private static Logger _logger = LoggerFactory.getLogger(SgDxpBaseContext.class);
+	private static Logger _logger = LoggerFactory.getLogger(SgDxp2BaseContext.class);
 
 	private static final long serialVersionUID = 1L;
 

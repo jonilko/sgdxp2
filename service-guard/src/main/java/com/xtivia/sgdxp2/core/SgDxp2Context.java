@@ -17,7 +17,7 @@ package com.xtivia.sgdxp2.core;
 
 import java.util.Map;
 
-public interface SgDxpContext extends Map<Object, Object> {
+public interface SgDxp2Context extends Map<Object, Object> {
 	String HTTP_REQUEST = "_request_";
 
 	String HTTP_SESSION = "_session_";

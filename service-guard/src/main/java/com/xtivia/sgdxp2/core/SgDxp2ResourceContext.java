@@ -23,7 +23,7 @@ import java.util.Set;
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.container.ResourceInfo;
 
-public class SgDxpResourceContext extends SgDxpBaseContext implements SgDxpContext {
+public class SgDxp2ResourceContext extends SgDxp2BaseContext implements SgDxp2Context {
 
 	private static final long serialVersionUID = 1L;
 
@@ -31,14 +31,14 @@ public class SgDxpResourceContext extends SgDxpBaseContext implements SgDxpConte
 
 	private final HashSet<Object> updates = new HashSet<>();
 
-	public SgDxpResourceContext(HttpServletRequest request, Map<?, ?> pathParameters, ResourceInfo resourceInfo) {
+	public SgDxp2ResourceContext(HttpServletRequest request, Map<?, ?> pathParameters, ResourceInfo resourceInfo) {
 		this.request = request;
-		super.put(SgDxpContext.HTTP_REQUEST, request);
-		super.put(SgDxpContext.HTTP_SESSION, request.getSession());
-		super.put(SgDxpContext.SERVLET_CONTEXT, request.getSession().getServletContext());
-		super.put(SgDxpContext.PATH_PARAMETERS, pathParameters);
-		super.put(SgDxpContext.RESOURCE_CLASS, resourceInfo.getClass());
-		super.put(SgDxpContext.RESOURCE_METHOD, resourceInfo.getResourceMethod());
+		super.put(SgDxp2Context.HTTP_REQUEST, request);
+		super.put(SgDxp2Context.HTTP_SESSION, request.getSession());
+		super.put(SgDxp2Context.SERVLET_CONTEXT, request.getSession().getServletContext());
+		super.put(SgDxp2Context.PATH_PARAMETERS, pathParameters);
+		super.put(SgDxp2Context.RESOURCE_CLASS, resourceInfo.getClass());
+		super.put(SgDxp2Context.RESOURCE_METHOD, resourceInfo.getResourceMethod());
 	}
 
 	@Override
@@ -56,7 +56,7 @@ public class SgDxpResourceContext extends SgDxpBaseContext implements SgDxpConte
 		}
 
 		// not in the super context, try the path parameters.
-		final Map<?, ?> pathParameters = (Map<?, ?>) super.get(SgDxpContext.PATH_PARAMETERS);
+		final Map<?, ?> pathParameters = (Map<?, ?>) super.get(SgDxp2Context.PATH_PARAMETERS);
 		if (pathParameters != null) {
 			// check path parameters and return if found.
 			o = pathParameters.get(key);
@@ -160,7 +160,7 @@ public class SgDxpResourceContext extends SgDxpBaseContext implements SgDxpConte
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		SgDxpResourceContext other = (SgDxpResourceContext) obj;
+		SgDxp2ResourceContext other = (SgDxp2ResourceContext) obj;
 		if (request == null) {
 			if (other.request != null)
 				return false;

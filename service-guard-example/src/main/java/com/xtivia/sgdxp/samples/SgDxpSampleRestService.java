@@ -13,7 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.xtivia.sgdxp2.samples;
+package com.xtivia.sgdxp.samples;
+
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
+import com.xtivia.sgdxp2.core.SgDxp2Authorizer;
+import com.xtivia.sgdxp2.core.SgDxp2Context;
 
 import java.util.Calendar;
 
@@ -22,16 +27,20 @@ import javax.ws.rs.core.Application;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Modified;
-
-import com.liferay.portal.kernel.log.Log;
-import com.liferay.portal.kernel.log.LogFactoryUtil;
-import com.xtivia.sgdxp2.core.SgDxp2Authorizer;
-import com.xtivia.sgdxp2.core.SgDxp2Context;
+import org.osgi.service.jaxrs.whiteboard.JaxrsWhiteboardConstants;
 
 /**
  * @author Xtivia
  */
 @Component(
+		property = {
+			JaxrsWhiteboardConstants.JAX_RS_APPLICATION_BASE + "=/sgdxp_samples",
+			JaxrsWhiteboardConstants.JAX_RS_NAME + "=Xtivia.SgDxp2.Sample",
+			"auth.verifier.guest.allowed=true",
+			"oauth2.scopechecker.type=none",
+			"liferay.access.control.disable=true",
+			"auth.verifier.auth.verifier.PortalSessionAuthVerifier.check.csrf.token=false"
+		},
 		service = Application.class)
 public class SgDxpSampleRestService extends Application implements SgDxp2Authorizer {
 

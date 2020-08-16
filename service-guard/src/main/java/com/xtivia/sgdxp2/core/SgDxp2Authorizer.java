@@ -15,6 +15,6 @@
  */
 package com.xtivia.sgdxp2.core;
 
-public interface SgDxpAuthorizer {
-	boolean authorize(SgDxpContext context);
+public interface SgDxp2Authorizer {
+	boolean authorize(SgDxp2Context context);
 }
