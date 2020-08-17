@@ -27,6 +27,7 @@ repositories {
 
 dependencies {
 	compileOnly "com.liferay.portal:com.liferay.portal.kernel:4.4.0"
+	compileOnly "com.liferay:com.liferay.oauth2.provider.scope.api:2.0.4"
 	compileOnly "javax.portlet:portlet-api:2.0"
 	compileOnly "javax.servlet:javax.servlet-api:3.0.1"
 	compileOnly "javax.ws.rs:javax.ws.rs-api:2.0.1"

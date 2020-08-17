@@ -15,6 +15,13 @@
  */
 package com.xtivia.sgdxp2.samples.resource.api;
 
+import com.liferay.oauth2.provider.scope.RequiresScope;
+import com.liferay.portal.kernel.model.User;
+import com.liferay.portal.kernel.service.ServiceContext;
+import com.xtivia.sgdxp2.annotation.Authenticated;
+import com.xtivia.sgdxp2.annotation.Authorized;
+import com.xtivia.sgdxp2.annotation.OmniAdmin;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -25,12 +32,6 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 
-import com.liferay.portal.kernel.model.User;
-import com.liferay.portal.kernel.service.ServiceContext;
-import com.xtivia.sgdxp2.annotation.Authenticated;
-import com.xtivia.sgdxp2.annotation.Authorized;
-import com.xtivia.sgdxp2.annotation.OmniAdmin;
-
 @Path("/bars")
 public interface BarResourceApi {
 	@GET
@@ -38,6 +39,7 @@ public interface BarResourceApi {
 	@Authenticated
 	@OmniAdmin
 	@Authorized
+	@RequiresScope("READ")
 	Response getAllBars(@Context SecurityContext securityContext, @Context HttpServletRequest servletRequest,
 			@Context ServiceContext serviceContext, @Context User user);
 
@@ -47,6 +49,7 @@ public interface BarResourceApi {
 	@Authenticated
 	@OmniAdmin
 	@Authorized
+	@RequiresScope("WRITE")
 	Response getBar(@PathParam("barId") long barId, @Context SecurityContext securityContext, @Context HttpServletRequest servletRequest,
 			@Context ServiceContext serviceContext, @Context User user);
 }
